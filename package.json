@@ -1,0 +1,9 @@
+{
+  "name": "postmark-email",
+  "version": "0.0.1",
+  "description": "a light wrapper around Postmark API",
+  "main": "postmark-email.js",
+  "dependencies": {
+    "postmark": "2.7.1"
+  }
+}
