@@ -17,7 +17,7 @@ if(doSendEmail) {
   client = new postmark.Client(postmarkAPIkey)
 }
 
-const handleEmailRes = (email, res)  => {
+const handleEmailRes = (res, email)  => {
   if(!res || res.Message !== 'OK')  {
     log(res)             
     warn('email not sent successfully')
@@ -26,7 +26,9 @@ const handleEmailRes = (email, res)  => {
     log(`email API functioning OK but no emails were sent`)
     return true 
   }              
-  log(`Email sent OK to ${email.to}`)
+  let out = `Email sent OK` 
+  if(email) out = out + `to ${email.to}` 
+  log(out)
   return true 
 } 
 
