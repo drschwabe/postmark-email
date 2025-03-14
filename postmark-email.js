@@ -13,7 +13,7 @@ if(doSendEmail) {
   postmarkAPIkey = process.env.POSTMARK_API_KEY
   if(!process.env.EMAIL_FROM) warn('missing process.env.EMAIL_FROM')
   emailFrom = process.env.EMAIL_FROM
-  postmark = require("postmark")
+  postmark = require("postmark-v2")
   client = new postmark.Client(postmarkAPIkey)
 }
 
